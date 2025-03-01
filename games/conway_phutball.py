@@ -314,6 +314,7 @@ class Game(AbstractGame):
         if self.game_state.jump_mode:
             print("Jump Mode: Only jump moves or pass are allowed.")
 
+
     def human_to_action(self):
         self.render()
         legal = self.legal_actions()
@@ -327,6 +328,12 @@ class Game(AbstractGame):
     def legal_actions(self):
         moves = get_moves(self.game_state)
         return [move_to_index(m) for m in moves]
+
+    def expert_agent(self):
+        import random
+        legal = self.legal_actions()
+        return random.choice(legal)
+
 
     def action_to_string(self, action):
         move = index_to_move(action, self.game_state)
