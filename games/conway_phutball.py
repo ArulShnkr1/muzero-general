@@ -64,7 +64,7 @@ class MuZeroConfig:
 
         # Evaluate
         self.muzero_player = 0
-        self.opponent = "expert"
+        self.opponent = "self"
 
         ### Self-Play
         self.num_workers = 1
